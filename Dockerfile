@@ -17,6 +17,8 @@ texlive-fonts-recommended \
 # for Awesome CV: https://github.com/posquit0/Awesome-CV
 texlive-fonts-extra \
 texlive-xetex fonts-font-awesome fonts-roboto fontconfig \
+# algorithm2e
+texlive-science \
 # git
 git \
 && rm -rf /var/lib/apt/lists/*
