@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER takashi imagire "imagire@gmail.com"
 
-RUN export LANG = "ja_JP.UTF-8"
-RUN export PYTHONIOENCODING = "utf-8"
+ENV LANG ja_JP.UTF-8
+ENV PYTHONIOENCODING utf-8
 
 # RUN apt-get -y update
 # RUN apt-get -y install python3
