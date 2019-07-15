@@ -1,10 +1,13 @@
 FROM ubuntu:18.04
 MAINTAINER takashi imagire "imagire@gmail.com"
 
-RUN apt-get -y update
-RUN apt-get -y install python3
-RUN apt-get -y update
-RUN apt-get -y install python3-pip
+RUN export LANG = "ja_JP.UTF-8"
+RUN export PYTHONIOENCODING = "utf-8"
+
+# RUN apt-get -y update
+# RUN apt-get -y install python3
+# RUN apt-get -y update
+# RUN apt-get -y install python3-pip
 
 RUN apt update && apt install -y --no-install-recommends \
 # for (u)platex
