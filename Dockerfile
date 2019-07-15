@@ -33,6 +33,7 @@ git \
 
 RUN mkdir -p $HOME/bin
 RUN ln -s /usr/bin/python3.6 $HOME/bin/python
+RUN ln -s /usr/bin/python /usr/bin/python3
 ENV PATH $PATH:$HOME/bin
 
 CMD ["/bin/bash"]
