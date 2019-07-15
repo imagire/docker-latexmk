@@ -8,8 +8,6 @@ RUN apt-get -y update
 RUN apt-get -y install python3
 RUN apt-get -y update
 RUN apt-get -y install python3-pip
-RUN mkdir -p $HOME/bin
-RUN ln -s /usr/bin/python3.6.8 $HOME/bin/python
 
 RUN apt update && apt install -y --no-install-recommends \
 # for (u)platex
@@ -32,5 +30,8 @@ texlive-science \
 # git
 git \
 && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p $HOME/bin
+RUN ln -s /usr/bin/python3.6 $HOME/bin/python
 
 CMD ["/bin/bash"]
