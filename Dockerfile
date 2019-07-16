@@ -4,11 +4,6 @@ MAINTAINER takashi imagire "imagire@gmail.com"
 ENV LANG ja_JP.UTF-8
 ENV PYTHONIOENCODING utf-8
 
-RUN apt-get -y update
-RUN apt-get -y install python3
-RUN apt-get -y update
-RUN apt-get -y install python3-pip
-
 RUN apt update && apt install -y --no-install-recommends \
 # for (u)platex
 texlive-lang-japanese \
@@ -31,9 +26,15 @@ texlive-science \
 git \
 && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get -y update
+RUN apt-get -y install python3
+RUN apt-get -y update
+RUN apt-get -y install python3-pip
+
 RUN mkdir -p $HOME/bin
 RUN ln -s /usr/bin/python3.6 $HOME/bin/python
-RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN unlink /usr/bin/python
+RUN ln -s $HOME/bin/python /usr/bin/python
 ENV PATH $PATH:$HOME/bin
 
 CMD ["/bin/bash"]
