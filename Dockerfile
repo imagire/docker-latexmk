@@ -26,15 +26,15 @@ texlive-science \
 git \
 && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get -y update
-RUN apt-get -y install python3
-RUN apt-get -y update
-RUN apt-get -y install python3-pip
+RUN apt-get -y update \
+apt-get -y install python3 \
+apt-get -y update \
+apt-get -y install python3-pip
 
-RUN mkdir -p $HOME/bin
-RUN ln -s /usr/bin/python3.6 $HOME/bin/python
-RUN unlink /usr/bin/python
-RUN ln -s $HOME/bin/python /usr/bin/python
+RUN mkdir -p $HOME/bin \
+ln -s /usr/bin/python3.6 $HOME/bin/python \
+unlink /usr/bin/python \
+ln -s $HOME/bin/python /usr/bin/python
 ENV PATH $PATH:$HOME/bin
 
 CMD ["/bin/bash"]
